@@ -27,8 +27,8 @@ body {
 
 .hero-banner {
   background-image:
-    linear-gradient(112deg, rgba(26, 39, 68, 0.88), rgba(26, 39, 68, 0.58), rgba(15, 23, 42, 0.74)),
-    url('/images/hero-banner.png');
+    linear-gradient(115deg, rgba(12, 20, 34, 0.85), rgba(22, 33, 55, 0.58), rgba(56, 24, 17, 0.52)),
+    url('/images/team-hero.jpg');
   background-position: center;
   background-size: cover;
 }

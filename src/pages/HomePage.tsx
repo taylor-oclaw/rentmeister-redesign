@@ -1,34 +1,71 @@
-import { ArrowRight, BadgeCheck, Phone } from 'lucide-react'
+import { ArrowRight, Phone, Star } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { ReviewCarousel } from '../components/ReviewCarousel'
 import { Reveal } from '../components/Reveal'
 import { TrustBadges } from '../components/TrustBadges'
-import { contactPhone, contactTel, familyPledge, serviceSubtitle, services, tagline } from '../data/siteContent'
+import { contactPhone, contactTel, services } from '../data/siteContent'
 
 export function HomePage() {
   return (
     <div className="space-y-14">
       <Reveal>
-        <section className="hero-banner relative overflow-hidden rounded-3xl px-6 py-14 text-white shadow-2xl shadow-[#1a2744]/25 sm:px-10 sm:py-16">
-          <div className="relative z-10 max-w-3xl">
-            <span className="inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-slate-100">
-              <BadgeCheck size={14} />
-              {tagline}
-            </span>
-            <h1 className="mt-5 text-3xl font-extrabold leading-tight sm:text-4xl lg:text-5xl">{familyPledge}</h1>
-            <p className="mt-4 max-w-2xl text-sm leading-relaxed text-slate-100 sm:text-base">{serviceSubtitle}</p>
-            <p className="mt-2 text-sm font-semibold text-slate-100">Google Rating: 4.7 stars · 991+ reviews</p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link to="/quote" className="rounded-full bg-[#c0392b] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#a93226]">
-                Contact Us Today
-              </Link>
-              <a
-                href={`tel:${contactTel}`}
-                className="inline-flex items-center gap-2 rounded-full border border-white/40 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
-              >
-                <Phone size={16} />
-                Call {contactPhone}
-              </a>
+        <section className="hero-banner relative left-1/2 right-1/2 -mx-[50vw] w-screen overflow-hidden py-16 text-white shadow-2xl shadow-[#1a2744]/35 sm:py-20">
+          <div className="absolute inset-0 bg-slate-950/30" />
+
+          <div className="relative z-10 mx-auto max-w-7xl px-6 sm:px-10 lg:px-12">
+            <div className="max-w-3xl">
+              <h1 className="text-3xl font-extrabold leading-tight sm:text-4xl lg:text-5xl">Experienced &amp; Reliable Service Since 1953</h1>
+              <p className="mt-4 text-sm font-semibold uppercase tracking-wide text-[#e25d4f] sm:text-base lg:text-lg">
+                Serving Davis, Weber, Morgan, and Salt Lake Counties
+              </p>
+
+              <div className="mt-8 flex flex-wrap gap-3">
+                <Link to="/quote" className="rounded-full bg-[#c0392b] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#a93226]">
+                  GET A QUOTE
+                </Link>
+                <a
+                  href={`tel:${contactTel}`}
+                  className="inline-flex items-center gap-2 rounded-full border border-white/40 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
+                >
+                  <Phone size={16} />
+                  Call {contactPhone}
+                </a>
+              </div>
+            </div>
+
+            <img
+              src="/images/best-of-davis-badge.png"
+              alt="Best of Davis County badge"
+              className="absolute right-6 top-6 z-20 hidden w-24 drop-shadow-2xl sm:block md:w-28 lg:right-12 lg:top-8 lg:w-32"
+            />
+
+            <div className="absolute bottom-5 right-6 z-20 rounded-2xl bg-white/95 px-4 py-3 text-slate-900 shadow-xl backdrop-blur sm:bottom-8 sm:right-10 lg:right-12">
+              <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Google Rating</p>
+              <div className="mt-1 flex items-center gap-1 text-[#c0392b]">
+                {Array.from({ length: 5 }).map((_, index) => (
+                  <Star key={index} size={14} fill="currentColor" />
+                ))}
+              </div>
+              <p className="mt-1 text-sm font-semibold">4.7 stars · 991 reviews</p>
+            </div>
+          </div>
+        </section>
+      </Reveal>
+
+      <Reveal>
+        <section>
+          <h2 className="text-center text-2xl font-bold text-[#1a2744] dark:text-slate-100 sm:text-3xl">See Why Families Trust Rentmeister</h2>
+          <div className="mx-auto mt-6 w-full max-w-[900px] overflow-hidden rounded-2xl border border-slate-200 bg-black shadow-2xl dark:border-slate-800">
+            <div className="relative w-full pt-[56.25%]">
+              <iframe
+                className="absolute inset-0 h-full w-full"
+                src="https://www.youtube.com/embed/5Ce7mlUK72c"
+                title="Rentmeister Total Home Service Provider"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              />
             </div>
           </div>
         </section>
