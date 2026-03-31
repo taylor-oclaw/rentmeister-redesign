@@ -9,16 +9,13 @@ import { PromotionsPage } from './pages/PromotionsPage'
 import { QuotePage } from './pages/QuotePage'
 import { CareersPage } from './pages/CareersPage'
 import { NotFoundPage } from './pages/NotFoundPage'
-import { useTheme } from './hooks/useTheme'
 import { contactPhone, contactTel } from './data/siteContent'
 
 function App() {
-  const { isDark, toggleTheme } = useTheme()
-
   return (
-    <div className="min-h-screen bg-slate-100 text-slate-900 transition-colors duration-300 dark:bg-slate-950 dark:text-slate-100">
-      <Header isDark={isDark} onToggleTheme={toggleTheme} />
-      <main className="mx-auto min-h-[70vh] w-full max-w-7xl px-4 pb-16 pt-24 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-[#f8f9fa] text-[#333333]">
+      <Header />
+      <main className="mx-auto min-h-[70vh] w-full max-w-7xl px-4 pb-16 pt-28 sm:px-6 lg:px-8">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/home" element={<Navigate to="/" replace />} />

@@ -6,14 +6,14 @@ export function TrustBadges() {
       {trustBadges.map((badge) => (
         <article
           key={badge.label}
-          className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-4 shadow-sm dark:border-slate-800 dark:bg-slate-900"
+          className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-4 shadow-sm"
         >
           {badge.imageSrc ? (
             <img src={badge.imageSrc} alt={badge.label} className="h-11 w-11 rounded-md object-contain" />
           ) : (
             <badge.icon className="text-[#c0392b]" size={20} />
           )}
-          <p className="text-sm font-semibold text-slate-700 dark:text-slate-100">{badge.label}</p>
+          <p className="text-sm font-semibold text-slate-700">{badge.label}</p>
         </article>
       ))}
     </section>

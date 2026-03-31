@@ -37,47 +37,47 @@ export function QuotePage() {
       />
 
       <section className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-        <form onSubmit={handleSubmit} className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900">
-          <h2 className="text-xl font-bold text-[#1a2744] dark:text-slate-100">Tell Us About Your Project</h2>
+        <form onSubmit={handleSubmit} className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+          <h2 className="text-xl font-bold text-[#1a2744]">Tell Us About Your Project</h2>
           <div className="mt-5 grid gap-4 sm:grid-cols-2">
-            <label className="text-sm font-medium text-slate-600 dark:text-slate-300">
+            <label className="text-sm font-medium text-slate-600">
               Full Name
               <input
                 required
                 value={form.name}
                 onChange={(event) => setForm((prev) => ({ ...prev, name: event.target.value }))}
-                className="mt-2 w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm outline-none ring-0 transition focus:border-[#c0392b] dark:border-slate-700 dark:bg-slate-950"
+                className="mt-2 w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm outline-none ring-0 transition focus:border-[#c0392b]"
               />
             </label>
 
-            <label className="text-sm font-medium text-slate-600 dark:text-slate-300">
+            <label className="text-sm font-medium text-slate-600">
               Email
               <input
                 required
                 type="email"
                 value={form.email}
                 onChange={(event) => setForm((prev) => ({ ...prev, email: event.target.value }))}
-                className="mt-2 w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm outline-none transition focus:border-[#c0392b] dark:border-slate-700 dark:bg-slate-950"
+                className="mt-2 w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm outline-none transition focus:border-[#c0392b]"
               />
             </label>
 
-            <label className="text-sm font-medium text-slate-600 dark:text-slate-300">
+            <label className="text-sm font-medium text-slate-600">
               Phone
               <input
                 required
                 type="tel"
                 value={form.phone}
                 onChange={(event) => setForm((prev) => ({ ...prev, phone: event.target.value }))}
-                className="mt-2 w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm outline-none transition focus:border-[#c0392b] dark:border-slate-700 dark:bg-slate-950"
+                className="mt-2 w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm outline-none transition focus:border-[#c0392b]"
               />
             </label>
 
-            <label className="text-sm font-medium text-slate-600 dark:text-slate-300">
+            <label className="text-sm font-medium text-slate-600">
               Service Type
               <select
                 value={form.serviceType}
                 onChange={(event) => setForm((prev) => ({ ...prev, serviceType: event.target.value }))}
-                className="mt-2 w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm outline-none transition focus:border-[#c0392b] dark:border-slate-700 dark:bg-slate-950"
+                className="mt-2 w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm outline-none transition focus:border-[#c0392b]"
               >
                 {services.map((service) => (
                   <option key={service.title}>{service.title}</option>
@@ -86,7 +86,7 @@ export function QuotePage() {
             </label>
           </div>
 
-          <label className="mt-4 block text-sm font-medium text-slate-600 dark:text-slate-300">
+          <label className="mt-4 block text-sm font-medium text-slate-600">
             Project Details
             <textarea
               required
@@ -94,7 +94,7 @@ export function QuotePage() {
               value={form.message}
               onChange={(event) => setForm((prev) => ({ ...prev, message: event.target.value }))}
               placeholder="Please share your current issue, timeline, and any details that can help us prepare."
-              className="mt-2 w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm outline-none transition focus:border-[#c0392b] dark:border-slate-700 dark:bg-slate-950"
+              className="mt-2 w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm outline-none transition focus:border-[#c0392b]"
             />
           </label>
 
@@ -103,21 +103,21 @@ export function QuotePage() {
           </button>
 
           {submitted && (
-            <p className="mt-4 inline-flex items-center gap-2 rounded-lg bg-emerald-500/10 px-3 py-2 text-sm text-emerald-600 dark:text-emerald-300">
+            <p className="mt-4 inline-flex items-center gap-2 rounded-lg bg-emerald-500/10 px-3 py-2 text-sm text-emerald-600">
               <CheckCircle2 size={16} />
               Thanks! Your request was received. A team member will contact you soon.
             </p>
           )}
         </form>
 
-        <aside className="space-y-4 rounded-3xl border border-slate-200 bg-white p-6 dark:border-slate-800 dark:bg-slate-900">
-          <h3 className="text-xl font-bold text-[#1a2744] dark:text-slate-100">What Happens Next?</h3>
-          <ol className="space-y-3 text-sm text-slate-600 dark:text-slate-300">
+        <aside className="space-y-4 rounded-3xl border border-slate-200 bg-white p-6">
+          <h3 className="text-xl font-bold text-[#1a2744]">What Happens Next?</h3>
+          <ol className="space-y-3 text-sm text-slate-600">
             <li>1. We review your request and confirm details.</li>
             <li>2. Our team contacts you to schedule a visit.</li>
             <li>3. You receive a transparent recommendation and quote.</li>
           </ol>
-          <div className="rounded-2xl bg-slate-100 p-4 text-sm text-slate-700 dark:bg-slate-800 dark:text-slate-100">
+          <div className="rounded-2xl bg-slate-100 p-4 text-sm text-slate-700">
             <p className="font-semibold">Need immediate help?</p>
             <a href={`tel:${contactTel}`} className="mt-1 block font-semibold text-[#c0392b] underline underline-offset-2">
               Call {contactPhone}
