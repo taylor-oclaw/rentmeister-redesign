@@ -20,17 +20,25 @@ body {
 
 .hero-gradient {
   background:
-    radial-gradient(circle at 20% 20%, rgba(96, 165, 250, 0.25), transparent 35%),
-    radial-gradient(circle at 80% 10%, rgba(251, 191, 36, 0.2), transparent 30%),
-    linear-gradient(140deg, rgba(30, 58, 138, 0.94), rgba(15, 23, 42, 0.97));
+    radial-gradient(circle at 15% 18%, rgba(192, 57, 43, 0.28), transparent 36%),
+    radial-gradient(circle at 80% 12%, rgba(255, 255, 255, 0.14), transparent 30%),
+    linear-gradient(140deg, rgba(26, 39, 68, 0.95), rgba(15, 23, 42, 0.97));
+}
+
+.hero-banner {
+  background-image:
+    linear-gradient(112deg, rgba(26, 39, 68, 0.88), rgba(26, 39, 68, 0.58), rgba(15, 23, 42, 0.74)),
+    url('/images/hero-banner.png');
+  background-position: center;
+  background-size: cover;
 }
 
 .card-gradient {
-  background: linear-gradient(145deg, rgba(30, 41, 59, 0.96), rgba(15, 23, 42, 0.9));
+  background: linear-gradient(145deg, rgba(26, 39, 68, 0.97), rgba(15, 23, 42, 0.93));
 }
 
 .light .card-gradient {
-  background: linear-gradient(145deg, #f8fafc, #e2e8f0);
+  background: linear-gradient(145deg, #ffffff, #e5e7eb);
 }
 
 @media (prefers-reduced-motion: no-preference) {

@@ -10,12 +10,13 @@ import { QuotePage } from './pages/QuotePage'
 import { CareersPage } from './pages/CareersPage'
 import { NotFoundPage } from './pages/NotFoundPage'
 import { useTheme } from './hooks/useTheme'
+import { contactPhone, contactTel } from './data/siteContent'
 
 function App() {
   const { isDark, toggleTheme } = useTheme()
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 transition-colors duration-300 dark:bg-slate-950 dark:text-slate-100">
+    <div className="min-h-screen bg-slate-100 text-slate-900 transition-colors duration-300 dark:bg-slate-950 dark:text-slate-100">
       <Header isDark={isDark} onToggleTheme={toggleTheme} />
       <main className="mx-auto min-h-[70vh] w-full max-w-7xl px-4 pb-16 pt-24 sm:px-6 lg:px-8">
         <Routes>
@@ -32,10 +33,10 @@ function App() {
       </main>
       <Footer />
       <a
-        href="tel:+18013994633"
-        className="fixed bottom-5 right-5 z-40 rounded-full bg-amber-500 px-5 py-3 text-sm font-semibold text-slate-950 shadow-xl shadow-amber-500/25 transition hover:bg-amber-400 md:hidden"
+        href={`tel:${contactTel}`}
+        className="fixed bottom-5 right-5 z-40 rounded-full bg-[#c0392b] px-5 py-3 text-sm font-semibold text-white shadow-xl shadow-[#c0392b]/30 transition hover:bg-[#a93226] md:hidden"
       >
-        Call (801) 399-4633
+        Call {contactPhone}
       </a>
     </div>
   )

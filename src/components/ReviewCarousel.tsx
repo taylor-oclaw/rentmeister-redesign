@@ -17,7 +17,7 @@ export function ReviewCarousel() {
 
   return (
     <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-xl shadow-slate-900/5 dark:border-slate-800 dark:bg-slate-900 dark:shadow-black/20">
-      <div className="mb-4 flex items-center gap-1 text-amber-400">
+      <div className="mb-4 flex items-center gap-1 text-[#c0392b]">
         {Array.from({ length: testimonial.stars }).map((_, i) => (
           <Star key={i} size={16} fill="currentColor" />
         ))}
@@ -36,10 +36,7 @@ export function ReviewCarousel() {
         </button>
         <div className="flex items-center gap-1">
           {testimonials.map((_, dotIndex) => (
-            <span
-              key={dotIndex}
-              className={`h-2 w-2 rounded-full ${dotIndex === index ? 'bg-amber-500' : 'bg-slate-300 dark:bg-slate-700'}`}
-            />
+            <span key={dotIndex} className={`h-2 w-2 rounded-full ${dotIndex === index ? 'bg-[#c0392b]' : 'bg-slate-300 dark:bg-slate-700'}`} />
           ))}
         </div>
         <button

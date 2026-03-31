@@ -14,8 +14,8 @@ export function ReviewsPage() {
       <Reveal>
         <section className="rounded-3xl border border-slate-200 bg-white p-6 text-center dark:border-slate-800 dark:bg-slate-900">
           <p className="text-sm uppercase tracking-wider text-slate-500">Google Reviews</p>
-          <p className="mt-2 text-4xl font-extrabold">4.7 / 5.0</p>
-          <div className="mt-3 flex justify-center gap-1 text-amber-400">
+          <p className="mt-2 text-4xl font-extrabold text-[#1a2744] dark:text-slate-100">4.7 / 5.0</p>
+          <div className="mt-3 flex justify-center gap-1 text-[#c0392b]">
             {Array.from({ length: 5 }).map((_, i) => (
               <Star key={i} size={20} fill="currentColor" className={i === 4 ? 'opacity-50' : ''} />
             ))}
@@ -28,7 +28,7 @@ export function ReviewsPage() {
         {testimonials.map((review) => (
           <Reveal key={review.name}>
             <article className="h-full rounded-2xl border border-slate-200 bg-white p-6 dark:border-slate-800 dark:bg-slate-900">
-              <div className="mb-3 flex gap-1 text-amber-400">
+              <div className="mb-3 flex gap-1 text-[#c0392b]">
                 {Array.from({ length: review.stars }).map((_, i) => (
                   <Star key={i} size={16} fill="currentColor" />
                 ))}
