@@ -1,0 +1,9 @@
+services:
+  rentmeister-web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: rentmeister-redesign
+    ports:
+      - "60050:80"
+    restart: unless-stopped

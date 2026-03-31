@@ -1,0 +1,38 @@
+import { PageHero } from '../components/PageHero'
+import { Reveal } from '../components/Reveal'
+import { careerOpenings } from '../data/siteContent'
+
+export function CareersPage() {
+  return (
+    <div className="space-y-12">
+      <PageHero
+        title="Build Your Career with Rentmeister"
+        subtitle="We're always looking for service-minded professionals who take pride in craftsmanship, customer care, and teamwork."
+      />
+
+      <section className="grid gap-4 md:grid-cols-3">
+        {careerOpenings.map((opening) => (
+          <Reveal key={opening.title}>
+            <article className="h-full rounded-2xl border border-slate-200 bg-white p-6 dark:border-slate-800 dark:bg-slate-900">
+              <p className="text-xs uppercase tracking-wider text-amber-500">Open Position</p>
+              <h2 className="mt-3 text-lg font-bold">{opening.title}</h2>
+              <p className="mt-1 text-sm text-slate-500">{opening.type}</p>
+              <p className="mt-3 text-sm text-slate-600 dark:text-slate-300">{opening.description}</p>
+              <a href="mailto:careers@rentmeister.com" className="mt-4 inline-flex text-sm font-semibold text-blue-500 hover:text-blue-400">
+                Apply / Inquire
+              </a>
+            </article>
+          </Reveal>
+        ))}
+      </section>
+
+      <section className="rounded-3xl border border-slate-200 bg-white p-6 text-sm text-slate-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">
+        <p className="font-semibold text-slate-800 dark:text-slate-100">Why Work With Us?</p>
+        <p className="mt-2">
+          At Rentmeister, you join a long-standing local company known for treating customers and employees with respect. We support growth,
+          technical training, and a culture where great work is recognized.
+        </p>
+      </section>
+    </div>
+  )
+}
