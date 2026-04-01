@@ -73,36 +73,32 @@ export function HomePage() {
       </Reveal>
 
       <Reveal>
-        <section className="grid gap-8 lg:grid-cols-[1.2fr_1fr]">
-          <div>
-            <h2 className="text-2xl font-bold text-[#1a2744] sm:text-3xl">Complete Home Services Under One Trusted Roof</h2>
-            <p className="mt-3 text-sm text-slate-600 sm:text-base">
-              Heating, air conditioning, plumbing, electrical, fireplaces, and outdoor kitchens — all backed by trusted local service.
-            </p>
-            <div className="mt-6 grid gap-4 sm:grid-cols-2">
-              {services.map((service) => (
-                <article key={service.title} className="card-gradient rounded-2xl border border-slate-200 p-5 shadow-sm shadow-slate-300/60">
-                  <service.icon className="text-[#c0392b]" size={20} />
-                  <h3 className="mt-3 text-base font-semibold text-[#1a2744]">{service.title}</h3>
-                  <p className="mt-2 text-sm text-slate-600">{service.summary}</p>
-                </article>
-              ))}
-            </div>
-            <Link to="/services" className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#1a2744] hover:text-[#0f172a]">
-              Explore all services
-              <ArrowRight size={16} />
-            </Link>
+        <section>
+          <h2 className="text-2xl font-bold text-[#1a2744] sm:text-3xl">Complete Home Services Under One Trusted Roof</h2>
+          <p className="mt-3 text-sm text-slate-600 sm:text-base">
+            Heating, air conditioning, plumbing, electrical, fireplaces, and outdoor kitchens — all backed by trusted local service.
+          </p>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {services.map((service) => (
+              <article key={service.title} className="card-gradient rounded-2xl border border-slate-200 p-5 shadow-sm shadow-slate-300/60">
+                <service.icon className="text-[#c0392b]" size={20} />
+                <h3 className="mt-3 text-base font-semibold text-[#1a2744]">{service.title}</h3>
+                <p className="mt-2 text-sm text-slate-600">{service.summary}</p>
+              </article>
+            ))}
           </div>
+          <Link to="/services" className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#1a2744] hover:text-[#0f172a]">
+            Explore all services
+            <ArrowRight size={16} />
+          </Link>
+        </section>
+      </Reveal>
 
-          <div>
-            <p className="mb-4 text-sm font-semibold uppercase tracking-wider text-slate-500">Client Reviews</p>
+      <Reveal>
+        <section className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm shadow-slate-300/60 sm:p-8">
+          <h2 className="mb-6 text-center text-2xl font-bold text-[#1a2744] sm:text-3xl">What Our Clients Say</h2>
+          <div className="mx-auto max-w-2xl">
             <ReviewCarousel />
-            <div className="mt-4 rounded-2xl border border-slate-200 bg-white p-4 text-sm shadow-sm shadow-slate-300/60">
-              <p className="font-semibold text-slate-800">4.7 ★ Google Rating · 991+ Reviews</p>
-              <p className="mt-1 text-slate-600">
-                Homeowners choose Rentmeister for dependable service, clear communication, and long-term comfort.
-              </p>
-            </div>
           </div>
         </section>
       </Reveal>
