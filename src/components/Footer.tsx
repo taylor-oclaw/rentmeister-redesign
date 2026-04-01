@@ -76,9 +76,20 @@ export function Footer() {
               Contact Us
             </Link>
           </div>
-          <div className="mt-4 flex items-center gap-3 text-[#e25d4f]">
-            <Globe size={18} />
-            <Mail size={18} />
+          <div className="mt-4 flex flex-wrap items-center gap-4 text-sm text-slate-200">
+            <a
+              href="https://www.rentmeister.com"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 text-[#e25d4f] hover:text-white"
+            >
+              <Globe size={18} />
+              Visit live site
+            </a>
+            <Link to="/quote" className="inline-flex items-center gap-2 text-[#e25d4f] hover:text-white">
+              <Mail size={18} />
+              Send a request
+            </Link>
           </div>
         </div>
       </div>

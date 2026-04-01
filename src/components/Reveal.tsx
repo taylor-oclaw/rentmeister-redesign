@@ -6,15 +6,22 @@ interface RevealProps extends PropsWithChildren {
 
 export function Reveal({ children, className }: RevealProps) {
   const ref = useRef<HTMLDivElement>(null)
-  const [visible, setVisible] = useState(false)
+  const [visible, setVisible] = useState(true)
 
   useEffect(() => {
     const el = ref.current
     if (!el) return
 
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) {
+      setVisible(true)
+      return
+    }
+
+    const fallback = window.setTimeout(() => setVisible(true), 250)
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
+          window.clearTimeout(fallback)
           setVisible(true)
           observer.disconnect()
         }
@@ -23,7 +30,10 @@ export function Reveal({ children, className }: RevealProps) {
     )
 
     observer.observe(el)
-    return () => observer.disconnect()
+    return () => {
+      window.clearTimeout(fallback)
+      observer.disconnect()
+    }
   }, [])
 
   return (

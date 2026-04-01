@@ -766,7 +766,7 @@ export const detailPages: DetailPageConfig[] = [
     slug: 'water-heater',
     title: 'Water Heater',
     subtitle: 'Tankless and conventional water heater guidance, installation, and long-term performance support.',
-    imageSrc: '/images/rentmeister/plumbing-547d55ca.png',
+    imageSrc: '/images/rentmeister/promotions-99bc7736.jpg',
     intro: [
       'Rentmeister’s water heater service focuses on helping homeowners choose between tank and tankless systems based on house size, hot water demand, and long-term efficiency goals.',
       'The company also ties water heater performance to ongoing maintenance through its Ultimate Service Agreement.',

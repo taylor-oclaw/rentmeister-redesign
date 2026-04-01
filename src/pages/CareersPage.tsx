@@ -18,8 +18,13 @@ export function CareersPage() {
               <h2 className="mt-3 text-lg font-bold text-[#1a2744]">{opening.title}</h2>
               <p className="mt-1 text-sm text-slate-500">{opening.type}</p>
               <p className="mt-3 text-sm text-slate-600">{opening.description}</p>
-              <a href="mailto:careers@rentmeister.com" className="mt-4 inline-flex text-sm font-semibold text-[#1a2744] hover:text-[#c0392b]">
-                Apply / Inquire
+              <a
+                href="https://www.rentmeister.com/careers"
+                target="_blank"
+                rel="noreferrer"
+                className="mt-4 inline-flex text-sm font-semibold text-[#1a2744] hover:text-[#c0392b]"
+              >
+                View Careers Page
               </a>
             </article>
           </Reveal>
