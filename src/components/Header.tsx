@@ -26,9 +26,9 @@ export function Header() {
       <div className="mx-auto flex h-20 w-full max-w-[1400px] items-center justify-between gap-2 px-4 lg:px-6">
         <Link to="/" className="flex shrink-0 items-center gap-2" aria-label="Rentmeister home">
           <img
-            src="/images/logo.jpg"
+            src="/images/logo.png"
             alt="Rentmeister logo"
-            className="h-12 w-auto rounded-xl bg-white p-1.5 shadow-md ring-1 ring-slate-200"
+            className="h-14 w-14 rounded-full object-contain"
           />
         </Link>
 
