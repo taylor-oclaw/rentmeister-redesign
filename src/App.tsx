@@ -13,7 +13,7 @@ import { contactPhone, contactTel } from './data/siteContent'
 
 function App() {
   return (
-    <div className="min-h-screen bg-[#f8f9fa] text-[#333333]">
+    <div className="min-h-screen bg-[#f5f5f5] text-[#333333]">
       <Header />
       <main className="mx-auto min-h-[70vh] w-full max-w-7xl px-4 pb-16 pt-28 sm:px-6 lg:px-8">
         <Routes>

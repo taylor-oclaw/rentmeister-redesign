@@ -7,7 +7,10 @@ export function Footer() {
     <footer className="border-t border-[#223355] bg-[#1a2744] py-12 text-white">
       <div className="mx-auto grid w-full max-w-7xl gap-10 px-4 sm:px-6 md:grid-cols-2 lg:grid-cols-4 lg:px-8">
         <div>
-          <h3 className="text-lg font-semibold text-white">Rentmeister Total Home Service</h3>
+          <div className="flex items-center gap-3">
+            <img src="/images/logo.png" alt="Rentmeister logo" className="h-11 w-11 rounded-full object-contain" />
+            <h3 className="text-lg font-semibold text-white">Rentmeister Total Home Service</h3>
+          </div>
           <p className="mt-3 text-sm text-slate-200">{familyPledge}</p>
           <p className="mt-2 text-sm text-slate-300">{serviceSubtitle}</p>
         </div>
@@ -17,7 +20,7 @@ export function Footer() {
           <ul className="mt-3 space-y-2 text-sm text-slate-200">
             <li className="flex items-center gap-2">
               <Phone size={14} className="text-[#c0392b]" />
-              <a href={`tel:${contactTel}`} className="hover:text-white">
+              <a href={`tel:${contactTel}`} className="text-white hover:text-[#e25d4f]">
                 {contactPhone}
               </a>
             </li>
@@ -44,25 +47,23 @@ export function Footer() {
         <div>
           <h4 className="text-sm font-semibold uppercase tracking-wider text-slate-300">Quick Links</h4>
           <div className="mt-3 flex flex-col gap-2 text-sm">
-            <Link to="/services" className="text-slate-200 hover:text-white">
+            <Link to="/services" className="text-[#e25d4f] hover:text-white">
               Heating, Plumbing & Electrical
             </Link>
-            <Link to="/promotions" className="text-slate-200 hover:text-white">
+            <Link to="/promotions" className="text-[#e25d4f] hover:text-white">
               Current Specials
             </Link>
-            <Link to="/quote" className="text-slate-200 hover:text-white">
+            <Link to="/quote" className="text-[#e25d4f] hover:text-white">
               Contact Us
             </Link>
           </div>
-          <div className="mt-4 flex items-center gap-3 text-slate-300">
+          <div className="mt-4 flex items-center gap-3 text-[#e25d4f]">
             <Globe size={18} />
             <Mail size={18} />
           </div>
         </div>
       </div>
-      <p className="mt-10 text-center text-xs text-slate-300">
-        © {new Date().getFullYear()} Rentmeister Total Home Service. All rights reserved.
-      </p>
+      <p className="mt-10 text-center text-xs text-slate-300">© {new Date().getFullYear()} Rentmeister Total Home Service. All rights reserved.</p>
     </footer>
   )
 }

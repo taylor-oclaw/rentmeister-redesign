@@ -10,16 +10,18 @@ export function HomePage() {
     <div className="space-y-14">
       <Reveal>
         <section className="relative left-1/2 right-1/2 -mx-[50vw] w-screen overflow-hidden text-white shadow-2xl shadow-[#1a2744]/35">
-          {/* Video background */}
+          {/* Video background — same video as original rentmeister.com */}
           <div className="absolute inset-0 overflow-hidden">
-            <iframe
-              className="pointer-events-none absolute left-1/2 top-1/2 h-[120%] w-[120%] -translate-x-1/2 -translate-y-1/2"
-              src="https://www.youtube.com/embed/5Ce7mlUK72c?autoplay=1&mute=1&loop=1&playlist=5Ce7mlUK72c&controls=0&showinfo=0&modestbranding=1&rel=0&playsinline=1&enablejsapi=1"
-              title="Rentmeister background video"
-              allow="autoplay; encrypted-media"
-              referrerPolicy="strict-origin-when-cross-origin"
-              style={{ border: 'none' }}
-            />
+            <video
+              className="absolute left-1/2 top-1/2 min-h-full min-w-full -translate-x-1/2 -translate-y-1/2 object-cover"
+              autoPlay
+              muted
+              loop
+              playsInline
+              poster="/images/team-hero.jpg"
+            >
+              <source src="/images/hero-video.mp4" type="video/mp4" />
+            </video>
           </div>
           {/* Dark overlay */}
           <div className="absolute inset-0 bg-[#1a2744]/70" />
@@ -77,7 +79,7 @@ export function HomePage() {
             </p>
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
               {services.map((service) => (
-                <article key={service.title} className="card-gradient rounded-2xl border border-slate-200 p-5">
+                <article key={service.title} className="card-gradient rounded-2xl border border-slate-200 p-5 shadow-sm shadow-slate-300/60">
                   <service.icon className="text-[#c0392b]" size={20} />
                   <h3 className="mt-3 text-base font-semibold text-[#1a2744]">{service.title}</h3>
                   <p className="mt-2 text-sm text-slate-600">{service.summary}</p>
@@ -93,7 +95,7 @@ export function HomePage() {
           <div>
             <p className="mb-4 text-sm font-semibold uppercase tracking-wider text-slate-500">Client Reviews</p>
             <ReviewCarousel />
-            <div className="mt-4 rounded-2xl border border-slate-200 bg-white p-4 text-sm">
+            <div className="mt-4 rounded-2xl border border-slate-200 bg-white p-4 text-sm shadow-sm shadow-slate-300/60">
               <p className="font-semibold text-slate-800">4.7 ★ Google Rating · 991+ Reviews</p>
               <p className="mt-1 text-slate-600">
                 Homeowners choose Rentmeister for dependable service, clear communication, and long-term comfort.
@@ -104,7 +106,7 @@ export function HomePage() {
       </Reveal>
 
       <Reveal>
-        <section className="rounded-3xl border border-slate-200 bg-white p-6 sm:p-8">
+        <section className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm shadow-slate-300/60 sm:p-8">
           <div className="grid gap-6 md:grid-cols-[1.2fr_1fr] md:items-center">
             <div>
               <h2 className="text-2xl font-bold text-[#1a2744] sm:text-3xl">Serving Northern Utah Families Since 1953</h2>

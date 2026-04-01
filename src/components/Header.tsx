@@ -1,35 +1,21 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { ChevronDown, Menu, Phone, X } from 'lucide-react'
 import { Link, NavLink } from 'react-router-dom'
 import { contactPhone, contactTel, navLinks } from '../data/siteContent'
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(false)
   const [openMobileMenu, setOpenMobileMenu] = useState<string | null>(null)
 
-  useEffect(() => {
-    const onScroll = () => setIsScrolled(window.scrollY > 24)
-    onScroll()
-    window.addEventListener('scroll', onScroll)
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
-
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'border-b border-slate-200 bg-white/95 shadow-lg shadow-slate-900/5 backdrop-blur'
-          : 'border-b border-transparent bg-white/88 backdrop-blur'
-      }`}
-    >
-      <div className="mx-auto flex h-20 w-full max-w-[1400px] items-center justify-between gap-2 px-4 lg:px-6">
-        <Link to="/" className="flex shrink-0 items-center gap-2" aria-label="Rentmeister home">
-          <img
-            src="/images/logo.png"
-            alt="Rentmeister logo"
-            className="h-14 w-14 rounded-full object-contain"
-          />
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-[#223355] bg-[#1a2744] shadow-lg shadow-black/20">
+      <div className="mx-auto flex h-20 w-full max-w-[1400px] items-center justify-between gap-3 px-4 lg:px-6">
+        <Link to="/" className="flex shrink-0 items-center gap-3" aria-label="Rentmeister home">
+          <img src="/images/logo.png" alt="Rentmeister logo" className="h-12 w-12 rounded-full object-contain" />
+          <div className="hidden sm:block">
+            <p className="text-sm font-bold uppercase tracking-[0.18em] text-white">Rentmeister</p>
+            <p className="text-[11px] font-medium uppercase tracking-[0.1em] text-slate-200">Total Home Service</p>
+          </div>
         </Link>
 
         <nav className="hidden items-center gap-1 xl:flex">
@@ -39,7 +25,7 @@ export function Header() {
                 to={item.to}
                 className={({ isActive }) =>
                   `inline-flex items-center gap-0.5 whitespace-nowrap rounded-lg px-2 py-1 text-xs font-semibold transition ${
-                    isActive ? 'text-[#c0392b]' : 'text-[#1a2744] hover:text-[#c0392b]'
+                    isActive ? 'text-[#e25d4f]' : 'text-white hover:text-[#e25d4f]'
                   }`
                 }
               >
@@ -53,7 +39,7 @@ export function Header() {
                     <Link
                       key={child.label}
                       to={child.to}
-                      className="block rounded-xl px-3 py-2 text-sm text-[#333333] transition hover:bg-[#f8f9fa] hover:text-[#1a2744]"
+                      className="block rounded-xl px-3 py-2 text-sm text-[#333333] transition hover:bg-[#f5f5f5] hover:text-[#1a2744]"
                     >
                       {child.label}
                     </Link>
@@ -65,7 +51,7 @@ export function Header() {
         </nav>
 
         <div className="hidden shrink-0 items-center gap-3 xl:flex">
-          <a href={`tel:${contactTel}`} className="inline-flex items-center gap-1.5 whitespace-nowrap text-xs font-semibold text-[#1a2744] hover:text-[#c0392b]">
+          <a href={`tel:${contactTel}`} className="inline-flex items-center gap-1.5 whitespace-nowrap text-xs font-semibold text-white hover:text-[#e25d4f]">
             <Phone size={14} />
             {contactPhone}
           </a>
@@ -75,7 +61,7 @@ export function Header() {
         </div>
 
         <button
-          className="rounded-lg border border-slate-300 p-2 text-[#1a2744] xl:hidden"
+          className="rounded-lg border border-white/30 p-2 text-white xl:hidden"
           onClick={() => setIsOpen((prev) => !prev)}
           aria-label="Toggle menu"
         >
@@ -84,7 +70,7 @@ export function Header() {
       </div>
 
       {isOpen && (
-        <div className="border-t border-slate-200 bg-white px-4 pb-4 pt-2 shadow-lg xl:hidden">
+        <div className="border-t border-[#223355] bg-[#1a2744] px-4 pb-4 pt-2 shadow-lg xl:hidden">
           <nav className="flex flex-col gap-1">
             {navLinks.map((item) => (
               <div key={item.label} className="rounded-lg border border-transparent">
@@ -94,7 +80,7 @@ export function Header() {
                     onClick={() => setIsOpen(false)}
                     className={({ isActive }) =>
                       `flex-1 rounded-lg px-3 py-2 text-sm font-medium transition ${
-                        isActive ? 'bg-[#c0392b]/10 text-[#c0392b]' : 'text-[#1a2744] hover:bg-[#f8f9fa]'
+                        isActive ? 'bg-[#c0392b]/20 text-[#e25d4f]' : 'text-white hover:bg-white/10'
                       }`
                     }
                   >
@@ -104,7 +90,7 @@ export function Header() {
                     <button
                       type="button"
                       onClick={() => setOpenMobileMenu((prev) => (prev === item.label ? null : item.label))}
-                      className="rounded-lg p-2 text-slate-600 hover:bg-slate-100"
+                      className="rounded-lg p-2 text-slate-100 hover:bg-white/10"
                       aria-label={`Toggle ${item.label} submenu`}
                     >
                       <ChevronDown size={16} className={`transition ${openMobileMenu === item.label ? 'rotate-180' : ''}`} />
@@ -113,13 +99,13 @@ export function Header() {
                 </div>
 
                 {item.submenu && openMobileMenu === item.label ? (
-                  <div className="mt-1 space-y-1 border-l border-slate-200 pl-2">
+                  <div className="mt-1 space-y-1 border-l border-white/20 pl-2">
                     {item.submenu.map((child) => (
                       <Link
                         key={child.label}
                         to={child.to}
                         onClick={() => setIsOpen(false)}
-                        className="block rounded-lg px-3 py-2 text-sm text-[#666666] hover:bg-[#f8f9fa] hover:text-[#1a2744]"
+                        className="block rounded-lg px-3 py-2 text-sm text-slate-200 hover:bg-white/10 hover:text-white"
                       >
                         {child.label}
                       </Link>
