@@ -9,7 +9,7 @@ export function HomePage() {
   return (
     <div className="space-y-14">
       <Reveal>
-        <section className="relative left-1/2 right-1/2 -mx-[50vw] w-screen overflow-hidden text-white shadow-2xl shadow-[#1a2744]/35">
+        <section className="relative left-1/2 right-1/2 -mx-[50vw] -mt-28 w-screen overflow-hidden text-white shadow-2xl shadow-[#1a2744]/35">
           {/* Video background */}
           <div className="absolute inset-0 overflow-hidden">
             <iframe
