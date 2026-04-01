@@ -8,7 +8,7 @@ export function Footer() {
       <div className="mx-auto grid w-full max-w-7xl gap-10 px-4 sm:px-6 md:grid-cols-2 lg:grid-cols-4 lg:px-8">
         <div>
           <div className="flex items-center gap-3">
-            <img src="/images/logo.png" alt="Rentmeister logo" className="h-11 w-11 rounded-full object-contain" />
+            <img src="/images/logo.png" alt="Rentmeister logo" className="h-16 w-16 rounded-full object-contain" />
             <h3 className="text-lg font-semibold text-white">Rentmeister Total Home Service</h3>
           </div>
           <p className="mt-3 text-sm text-slate-200">{familyPledge}</p>

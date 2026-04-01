@@ -13,7 +13,7 @@ export function TrustBadges() {
           ) : (
             <badge.icon className="text-[#c0392b]" size={20} />
           )}
-          <p className="text-sm font-semibold text-slate-700">{badge.label}</p>
+          <p className="text-sm font-semibold text-[#333333]">{badge.label}</p>
         </article>
       ))}
     </section>

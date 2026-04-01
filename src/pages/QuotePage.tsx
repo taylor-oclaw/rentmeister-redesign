@@ -37,7 +37,7 @@ export function QuotePage() {
       />
 
       <section className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-        <form onSubmit={handleSubmit} className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+        <form onSubmit={handleSubmit} className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm shadow-slate-300/60">
           <h2 className="text-xl font-bold text-[#1a2744]">Tell Us About Your Project</h2>
           <div className="mt-5 grid gap-4 sm:grid-cols-2">
             <label className="text-sm font-medium text-slate-600">
@@ -110,15 +110,15 @@ export function QuotePage() {
           )}
         </form>
 
-        <aside className="space-y-4 rounded-3xl border border-slate-200 bg-white p-6">
+        <aside className="space-y-4 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm shadow-slate-300/60">
           <h3 className="text-xl font-bold text-[#1a2744]">What Happens Next?</h3>
           <ol className="space-y-3 text-sm text-slate-600">
             <li>1. We review your request and confirm details.</li>
             <li>2. Our team contacts you to schedule a visit.</li>
             <li>3. You receive a transparent recommendation and quote.</li>
           </ol>
-          <div className="rounded-2xl bg-slate-100 p-4 text-sm text-slate-700">
-            <p className="font-semibold">Need immediate help?</p>
+          <div className="rounded-2xl bg-[#f5f5f5] p-4 text-sm text-[#333333]">
+            <p className="font-semibold text-[#1a2744]">Need immediate help?</p>
             <a href={`tel:${contactTel}`} className="mt-1 block font-semibold text-[#c0392b] underline underline-offset-2">
               Call {contactPhone}
             </a>

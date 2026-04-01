@@ -52,7 +52,7 @@ export function ServicesPage() {
       <section className="grid gap-6 md:grid-cols-2">
         {services.map((service, idx) => (
           <Reveal key={service.title} className="float-in">
-            <article className="h-full rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+            <article className="h-full rounded-3xl border border-slate-200 bg-white p-6 shadow-sm shadow-slate-300/60">
               <div className="inline-flex rounded-xl bg-[#c0392b]/15 p-3 text-[#c0392b]">
                 <service.icon size={22} />
               </div>
@@ -70,7 +70,7 @@ export function ServicesPage() {
       </section>
 
       <Reveal>
-        <section id="fireplaces" className="scroll-mt-28 rounded-3xl border border-slate-200 bg-white p-6">
+        <section id="fireplaces" className="scroll-mt-28 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm shadow-slate-300/60">
           <div className="grid gap-5 md:grid-cols-[1.2fr_1fr] md:items-center">
             <div>
               <h3 className="text-2xl font-bold text-[#1a2744]">Fireplaces & Indoor Comfort</h3>
@@ -84,7 +84,7 @@ export function ServicesPage() {
       </Reveal>
 
       <Reveal>
-        <section id="outdoor-kitchens" className="scroll-mt-28 rounded-3xl border border-slate-200 bg-white p-6">
+        <section id="outdoor-kitchens" className="scroll-mt-28 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm shadow-slate-300/60">
           <div className="grid gap-5 md:grid-cols-[1fr_1.2fr] md:items-center">
             <img src="/images/outdoor-kitchen.jpg" alt="Outdoor kitchen installation" className="h-56 w-full rounded-2xl object-cover" />
             <div>
@@ -100,7 +100,7 @@ export function ServicesPage() {
       <section className="grid gap-5 lg:grid-cols-3">
         {serviceGroups.map((group) => (
           <Reveal key={group.id}>
-            <article id={group.id} className="scroll-mt-28 rounded-3xl border border-slate-200 bg-white p-6">
+            <article id={group.id} className="scroll-mt-28 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm shadow-slate-300/60">
               <h3 className="text-lg font-bold text-[#1a2744]">{group.title}</h3>
               <ul className="mt-3 space-y-2 text-sm text-slate-600">
                 {group.items.map((item) => (
@@ -114,7 +114,7 @@ export function ServicesPage() {
         ))}
       </section>
 
-      <section id="maintenance-program" className="scroll-mt-28 rounded-3xl border border-slate-200 bg-white p-8 text-center">
+      <section id="maintenance-program" className="scroll-mt-28 rounded-3xl border border-slate-200 bg-white p-8 text-center shadow-sm shadow-slate-300/60">
         <h3 className="text-2xl font-bold text-[#1a2744]">Maintenance Program</h3>
         <p className="mt-3 text-sm text-slate-600">
           Ask about seasonal maintenance plans that keep your systems running efficiently and help prevent costly breakdowns.

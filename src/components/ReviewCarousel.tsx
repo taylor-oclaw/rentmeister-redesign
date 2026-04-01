@@ -16,7 +16,7 @@ export function ReviewCarousel() {
   const testimonial = useMemo(() => testimonials[index], [index])
 
   return (
-    <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-xl shadow-slate-900/5">
+    <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm shadow-slate-300/60">
       <div className="mb-4 flex items-center gap-1 text-[#c0392b]">
         {Array.from({ length: testimonial.stars }).map((_, i) => (
           <Star key={i} size={16} fill="currentColor" />

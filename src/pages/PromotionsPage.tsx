@@ -14,7 +14,7 @@ export function PromotionsPage() {
       <section className="grid gap-5 md:grid-cols-3">
         {promotions.map((promotion) => (
           <Reveal key={promotion.title}>
-            <article className="h-full overflow-hidden rounded-2xl border border-slate-200 bg-white">
+            <article className="h-full overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm shadow-slate-300/60">
               <img src={promotion.imageSrc} alt={promotion.title} className="h-36 w-full object-cover" />
               <div className="p-6">
                 <p className="text-xs font-semibold uppercase tracking-wider text-[#c0392b]">Limited Offer</p>
@@ -28,7 +28,7 @@ export function PromotionsPage() {
       </section>
 
       <Reveal>
-        <section className="rounded-3xl border border-[#c0392b]/30 bg-[#c0392b]/5 p-6 text-sm text-slate-700">
+        <section className="rounded-3xl border border-[#c0392b]/30 bg-[#c0392b]/5 p-6 text-sm text-[#333333] shadow-sm shadow-slate-300/60">
           <p className="font-semibold text-[#1a2744]">Need help choosing the right offer?</p>
           <p className="mt-2">Call our office at {contactPhone} and we'll walk you through available promotions based on your service needs.</p>
           <Link to="/quote" className="mt-4 inline-flex rounded-full bg-[#c0392b] px-4 py-2 font-semibold text-white transition hover:bg-[#a93226]">

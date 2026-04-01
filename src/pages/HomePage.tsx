@@ -10,18 +10,16 @@ export function HomePage() {
     <div className="space-y-14">
       <Reveal>
         <section className="relative left-1/2 right-1/2 -mx-[50vw] w-screen overflow-hidden text-white shadow-2xl shadow-[#1a2744]/35">
-          {/* Video background — same video as original rentmeister.com */}
+          {/* Video background */}
           <div className="absolute inset-0 overflow-hidden">
-            <video
-              className="absolute left-1/2 top-1/2 min-h-full min-w-full -translate-x-1/2 -translate-y-1/2 object-cover"
-              autoPlay
-              muted
-              loop
-              playsInline
-              poster="/images/team-hero.jpg"
-            >
-              <source src="/images/hero-video.mp4" type="video/mp4" />
-            </video>
+            <iframe
+              className="pointer-events-none absolute left-1/2 top-1/2 h-[120%] w-[120%] -translate-x-1/2 -translate-y-1/2"
+              src="https://www.youtube.com/embed/5Ce7mlUK72c?autoplay=1&mute=1&loop=1&playlist=5Ce7mlUK72c&controls=0&showinfo=0&modestbranding=1&rel=0&playsinline=1&enablejsapi=1"
+              title="Rentmeister background video"
+              allow="autoplay; encrypted-media"
+              referrerPolicy="strict-origin-when-cross-origin"
+              style={{ border: 'none' }}
+            />
           </div>
           {/* Dark overlay */}
           <div className="absolute inset-0 bg-[#1a2744]/70" />

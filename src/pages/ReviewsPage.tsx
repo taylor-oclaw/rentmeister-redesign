@@ -12,7 +12,7 @@ export function ReviewsPage() {
       />
 
       <Reveal>
-        <section className="rounded-3xl border border-slate-200 bg-white p-6 text-center">
+        <section className="rounded-3xl border border-slate-200 bg-white p-6 text-center shadow-sm shadow-slate-300/60">
           <p className="text-sm uppercase tracking-wider text-slate-500">Google Reviews</p>
           <p className="mt-2 text-4xl font-extrabold text-[#1a2744]">4.7 / 5.0</p>
           <div className="mt-3 flex justify-center gap-1 text-[#c0392b]">
@@ -27,14 +27,14 @@ export function ReviewsPage() {
       <section className="grid gap-4 md:grid-cols-2">
         {testimonials.map((review) => (
           <Reveal key={review.name}>
-            <article className="h-full rounded-2xl border border-slate-200 bg-white p-6">
+            <article className="h-full rounded-2xl border border-slate-200 bg-white p-6 shadow-sm shadow-slate-300/60">
               <div className="mb-3 flex gap-1 text-[#c0392b]">
                 {Array.from({ length: review.stars }).map((_, i) => (
                   <Star key={i} size={16} fill="currentColor" />
                 ))}
               </div>
               <p className="text-sm leading-relaxed text-slate-600">“{review.text}”</p>
-              <p className="mt-4 text-sm font-semibold">{review.name}</p>
+              <p className="mt-4 text-sm font-semibold text-[#1a2744]">{review.name}</p>
             </article>
           </Reveal>
         ))}
