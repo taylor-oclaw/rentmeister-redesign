@@ -1,6 +1,15 @@
-import { Globe, Mail, MapPin, Phone, Clock3 } from 'lucide-react'
+import { Globe, Mail, MapPin, Phone, ShieldAlert } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import { contactPhone, contactTel, familyPledge, serviceAreas, serviceSubtitle } from '../data/siteContent'
+import {
+  contactAddressLine1,
+  contactAddressLine2,
+  contactPhone,
+  contactTel,
+  emergencyAvailability,
+  familyPledge,
+  serviceAreas,
+  serviceSubtitle,
+} from '../data/siteContent'
 
 export function Footer() {
   return (
@@ -24,13 +33,17 @@ export function Footer() {
                 {contactPhone}
               </a>
             </li>
-            <li className="flex items-center gap-2">
-              <MapPin size={14} className="text-[#c0392b]" />
-              Kaysville, Utah
+            <li className="flex items-start gap-2">
+              <MapPin size={14} className="mt-0.5 text-[#c0392b]" />
+              <span>
+                {contactAddressLine1}
+                <br />
+                {contactAddressLine2}
+              </span>
             </li>
             <li className="flex items-center gap-2">
-              <Clock3 size={14} className="text-[#c0392b]" />
-              Mon–Sat: 7:00 AM – 7:00 PM
+              <ShieldAlert size={14} className="text-[#c0392b]" />
+              {emergencyAvailability}
             </li>
           </ul>
         </div>
@@ -42,6 +55,9 @@ export function Footer() {
               <li key={area}>{area}</li>
             ))}
           </ul>
+          <Link to="/service-areas" className="mt-4 inline-flex text-sm font-semibold text-[#e25d4f] hover:text-white">
+            View city-by-city coverage
+          </Link>
         </div>
 
         <div>
@@ -52,6 +68,9 @@ export function Footer() {
             </Link>
             <Link to="/promotions" className="text-[#e25d4f] hover:text-white">
               Current Specials
+            </Link>
+            <Link to="/reviews" className="text-[#e25d4f] hover:text-white">
+              Recent Reviews
             </Link>
             <Link to="/quote" className="text-[#e25d4f] hover:text-white">
               Contact Us

@@ -9,14 +9,11 @@ import { PromotionsPage } from './pages/PromotionsPage'
 import { QuotePage } from './pages/QuotePage'
 import { CareersPage } from './pages/CareersPage'
 import { NotFoundPage } from './pages/NotFoundPage'
-import { contactPhone, contactTel } from './data/siteContent'
+import { DetailPage } from './pages/DetailPage'
+import { contactPhone, contactTel, detailPages } from './data/siteContent'
 
 function PageWrapper({ children }: { children: React.ReactNode }) {
-  return (
-    <main className="mx-auto min-h-[70vh] w-full max-w-7xl px-4 pb-16 pt-28 sm:px-6 lg:px-8">
-      {children}
-    </main>
-  )
+  return <main className="mx-auto min-h-[70vh] w-full max-w-7xl px-4 pb-16 pt-28 sm:px-6 lg:px-8">{children}</main>
 }
 
 function App() {
@@ -32,6 +29,9 @@ function App() {
         <Route path="/promotions" element={<PageWrapper><PromotionsPage /></PageWrapper>} />
         <Route path="/quote" element={<PageWrapper><QuotePage /></PageWrapper>} />
         <Route path="/careers" element={<PageWrapper><CareersPage /></PageWrapper>} />
+        {detailPages.map((page) => (
+          <Route key={page.slug} path={`/${page.slug}`} element={<PageWrapper><DetailPage page={page} /></PageWrapper>} />
+        ))}
         <Route path="*" element={<PageWrapper><NotFoundPage /></PageWrapper>} />
       </Routes>
       <Footer />
