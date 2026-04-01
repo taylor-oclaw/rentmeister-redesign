@@ -7,9 +7,9 @@ import { contactPhone, contactTel, services } from '../data/siteContent'
 
 export function HomePage() {
   return (
-    <div className="space-y-14">
+    <div>
       <Reveal>
-        <section className="relative overflow-hidden text-white shadow-2xl shadow-[#1a2744]/35" style={{ marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)', marginTop: '-7rem', width: '100vw' }}>
+        <section className="relative w-full overflow-hidden pt-20 text-white">
           {/* Video background */}
           <div className="absolute inset-0 overflow-hidden">
             <video
@@ -65,6 +65,8 @@ export function HomePage() {
           </div>
         </section>
       </Reveal>
+
+      <div className="mx-auto max-w-7xl space-y-14 px-4 py-14 sm:px-6 lg:px-8">
 
       <Reveal>
         <TrustBadges />
@@ -129,6 +131,8 @@ export function HomePage() {
           </div>
         </section>
       </Reveal>
+
+      </div>
     </div>
   )
 }

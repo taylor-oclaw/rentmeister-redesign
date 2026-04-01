@@ -11,23 +11,29 @@ import { CareersPage } from './pages/CareersPage'
 import { NotFoundPage } from './pages/NotFoundPage'
 import { contactPhone, contactTel } from './data/siteContent'
 
+function PageWrapper({ children }: { children: React.ReactNode }) {
+  return (
+    <main className="mx-auto min-h-[70vh] w-full max-w-7xl px-4 pb-16 pt-28 sm:px-6 lg:px-8">
+      {children}
+    </main>
+  )
+}
+
 function App() {
   return (
-    <div className="min-h-screen bg-[#f5f5f5] text-[#333333]">
+    <div className="min-h-screen overflow-x-hidden bg-[#f5f5f5] text-[#333333]">
       <Header />
-      <main className="mx-auto min-h-[70vh] w-full max-w-7xl px-4 pb-16 pt-28 sm:px-6 lg:px-8">
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/home" element={<Navigate to="/" replace />} />
-          <Route path="/services" element={<ServicesPage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/reviews" element={<ReviewsPage />} />
-          <Route path="/promotions" element={<PromotionsPage />} />
-          <Route path="/quote" element={<QuotePage />} />
-          <Route path="/careers" element={<CareersPage />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
-      </main>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/home" element={<Navigate to="/" replace />} />
+        <Route path="/services" element={<PageWrapper><ServicesPage /></PageWrapper>} />
+        <Route path="/about" element={<PageWrapper><AboutPage /></PageWrapper>} />
+        <Route path="/reviews" element={<PageWrapper><ReviewsPage /></PageWrapper>} />
+        <Route path="/promotions" element={<PageWrapper><PromotionsPage /></PageWrapper>} />
+        <Route path="/quote" element={<PageWrapper><QuotePage /></PageWrapper>} />
+        <Route path="/careers" element={<PageWrapper><CareersPage /></PageWrapper>} />
+        <Route path="*" element={<PageWrapper><NotFoundPage /></PageWrapper>} />
+      </Routes>
       <Footer />
       <a
         href={`tel:${contactTel}`}
