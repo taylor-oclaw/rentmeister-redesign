@@ -50,7 +50,7 @@ export function HomePage() {
             <img
               src="/images/best-of-davis-badge.png"
               alt="Best of Davis County badge"
-              className="absolute right-6 top-6 z-20 hidden w-24 drop-shadow-2xl sm:block md:w-28 lg:right-12 lg:top-10 lg:w-32"
+              className="absolute right-6 top-28 z-20 hidden w-24 drop-shadow-2xl sm:block md:w-28 lg:right-12 lg:top-32 lg:w-32"
             />
 
             <div className="absolute bottom-6 right-6 z-20 rounded-2xl bg-white/95 px-4 py-3 text-slate-900 shadow-xl backdrop-blur sm:bottom-10 sm:right-10 lg:right-12">
